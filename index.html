@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!-- External Cascading Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <title>Banner Animation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>JS Animation</h2>
+        <div class="bg">
+            <div class="block"></div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        const bg = document.getElementsByClassName('bg')[0];
+            const blocks = document.getElementsByClassName('block');
+
+            for (var i = 1; i < 400; i++) {
+                bg.innerHTML += "<div class='block'></div>";
+                const duration = Math.random() * 5;
+                blocks[i].style.animationDuration = 2 + duration + 's';
+                blocks[i].style.animationDelay = duration + 's';
+            }
+
+            const container = document.querySelector('.container');
+            setTimeout(function () {
+                container.classList.add('active');
+            }, 14000);
+    </script>
+</body>
+
+</html>
